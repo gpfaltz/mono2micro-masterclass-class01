@@ -11,14 +11,14 @@ Starting Application:
 
 Testing Applcation:
 
-curl localhost:8080/travelorder
-curl localhost:8080/travelorder/findById?id=1
-curl -d "{}" -H "Content-Type: application/json" http://localhost:8080/travelorder
+curl localhost:8080/travelorder 
+curl localhost:8080/travelorder/findById?id=1 
+curl -d "{}" -H "Content-Type: application/json" http://localhost:8080/travelorder 
 
-curl localhost:8080/flight
-curl localhost:8080/flight/findById?id=1
+curl localhost:8080/flight 
+curl localhost:8080/flight/findById?id=1 
 curl -d "{\"travelOrderId\": \"1\", \"sourceAirport\": \"GRU\", \"destinyAirport\": \"SDU\"}" -H "Content-Type: application/json" http://localhost:8080/flight
-
-curl localhost:8080/hotel
-curl localhost:8080/hotel/findById?id=1
-curl -d "{\"travelOrderId\": \"2\", \"nights\": \"10\"}" -H "Content-Type: application/json" http://localhost:8080/hotel
+ 
+curl localhost:8080/hotel 
+curl localhost:8080/hotel/findById?id=1 
+curl -d "{\"travelOrderId\": \"2\", \"nights\": \"10\"}" -H "Content-Type: application/json" http://localhost:8080/hotel 
