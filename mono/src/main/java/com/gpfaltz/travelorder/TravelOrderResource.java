@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -25,7 +26,7 @@ public class TravelOrderResource {
 	public TravelOrder findById(@QueryParam("id") long id) {
 		return TravelOrder.findById(id);
 	}
-	
+
 	@Transactional
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -33,7 +34,18 @@ public class TravelOrderResource {
 	public TravelOrder newTravelOrder(TravelOrder travelOrder) {
 		travelOrder.id = null;
 		travelOrder.persist();
-		
+
 		return travelOrder;
+	}
+
+	@Transactional
+	@DELETE
+	@Path("deleteById")
+	public void deleteById(@QueryParam("id") long id) {
+		
+		TravelOrder travelOrder = TravelOrder.findById(id);
+		if (travelOrder != null) {
+			travelOrder.delete();
+		}
 	}
 }

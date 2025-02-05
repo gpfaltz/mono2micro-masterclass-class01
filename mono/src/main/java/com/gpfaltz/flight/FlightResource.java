@@ -2,8 +2,11 @@ package com.gpfaltz.flight;
 
 import java.util.List;
 
+import com.gpfaltz.travelorder.TravelOrder;
+
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -38,6 +41,15 @@ public class FlightResource {
 		
 		return flight;
 	}
-	
-	
+		
+	@Transactional
+	@DELETE
+	@Path("deleteById")
+	public void deleteById(@QueryParam("id") long id) {
+		
+		Flight flight = Flight.findById(id);
+		if (flight != null) {
+			flight.delete();
+		}
+	}
 }

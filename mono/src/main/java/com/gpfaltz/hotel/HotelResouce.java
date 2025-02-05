@@ -2,8 +2,11 @@ package com.gpfaltz.hotel;
 
 import java.util.List;
 
+import com.gpfaltz.flight.Flight;
+
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -39,4 +42,14 @@ public class HotelResouce {
 		return hotel;
 	}
 
+	@Transactional
+	@DELETE
+	@Path("deleteById")
+	public void deleteById(@QueryParam("id") long id) {
+		
+		Hotel hotel = Hotel.findById(id);
+		if (hotel != null) {
+			hotel.delete();
+		}
+	}
 }
