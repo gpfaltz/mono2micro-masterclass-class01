@@ -1,7 +1,7 @@
 # mono2micro-masterclass-class01
 Monolithic Applcation to Micro Services Applications - Class 01/05
 
-Main Objective: Creation of a Monolithic Application - Travel Order App
+Main Objective: Creation of a Monolithic Travel Order Application
 
 Pre requistes:
 JAVA 21 Installed
