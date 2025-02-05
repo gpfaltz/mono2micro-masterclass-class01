@@ -12,6 +12,7 @@ RestEasy Reactive JSON-B - quarkus-resteasy-jsonb
 Hibernate ORM - quarkus-hibernate-orm3
 Hibernate ORM with Panache - quarkus-hibernate-orm-panache
 JDBC Driver - H2 - quarkus-jdbc-h2
+Lombok - 1.18.36
 
 Some Commands for Testing Application:
 
