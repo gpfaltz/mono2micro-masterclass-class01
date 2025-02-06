@@ -15,7 +15,7 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("hotel")
-public class HotelResouce {
+public class HotelResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
